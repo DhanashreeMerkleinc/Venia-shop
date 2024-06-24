@@ -588,11 +588,11 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _heartPng = require("./assets/images/heart.png");
 var _heartPngDefault = parcelHelpers.interopDefault(_heartPng);
 document.addEventListener("DOMContentLoaded", function() {
-    const loader = document.querySelector(".loader");
-    loader.classList.remove("loader--completed");
-    setTimeout(()=>{
-        loader.classList.add("loader--completed");
-    }, 3000);
+    let loader1 = document.querySelector(".loader");
+    // loader.classList.remove('loader--completed');
+    // setTimeout(() => {
+    //     loader.classList.add('loader--completed');
+    // }, 3000);
     const mobileMenu = document.querySelector(".js-mobile-menu");
     const navListWrap = document.getElementById("navListWrap");
     // Header menu toggle functionality
@@ -722,6 +722,7 @@ const PLPController = {
     },
     async getProducts () {
         try {
+            loader.classList.add("loader--completed");
             const URL = `https://fakestoreapi.com/products?limit=${itemsPerPage}`;
             let response = await fetch(URL);
             products = await response.json();
@@ -730,6 +731,7 @@ const PLPController = {
         // PLPController.setupPagination();
         } catch (err) {
             console.log(err);
+            loader.classList.remove("loader--completed");
         }
     },
     filterProducts () {

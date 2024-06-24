@@ -1,12 +1,12 @@
 import heartImg from './assets/images/heart.png';
 
 document.addEventListener('DOMContentLoaded', function () {
-    const loader = document.querySelector('.loader');
-    loader.classList.remove('loader--completed');
+    let loader = document.querySelector('.loader');
+    // loader.classList.remove('loader--completed');
 
-    setTimeout(() => {
-        loader.classList.add('loader--completed');
-    }, 3000);
+    // setTimeout(() => {
+    //     loader.classList.add('loader--completed');
+    // }, 3000);
 
     const mobileMenu = document.querySelector('.js-mobile-menu');
     const navListWrap = document.getElementById('navListWrap');
@@ -172,6 +172,7 @@ const PLPController = {
     },
     async getProducts() {
         try {
+            loader.classList.add('loader--completed');
             const URL = `https://fakestoreapi.com/products?limit=${itemsPerPage}`;
             let response = await fetch(URL);
             products = await response.json();
@@ -180,6 +181,7 @@ const PLPController = {
             // PLPController.setupPagination();
         } catch (err) {
             console.log(err);
+            loader.classList.remove('loader--completed');
         }
     },
     filterProducts() {
