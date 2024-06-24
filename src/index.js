@@ -99,8 +99,8 @@ const PLPController = {
                 currentPage = 1;
                 PLPController.filterProducts();
                 PLPController.displayProducts(currentPage);
-                PLPController.setupPagination();
-                document.querySelector('.product__pagination').style.visibility = 'hidden';
+                // PLPController.setupPagination();
+                // document.querySelector('.product__pagination').style.visibility = 'hidden';
 
                 document.querySelector('#resetProducts').style.display = 'block';
                 document.querySelector('#loadMoreProducts').style.display = 'none';
@@ -111,8 +111,8 @@ const PLPController = {
                 currentPage = 1;
                 PLPController.filterProducts();
                 PLPController.displayProducts(currentPage);
-                PLPController.setupPagination();
-                document.querySelector('.product__pagination').style.visibility = 'visible';
+                // PLPController.setupPagination();
+                // document.querySelector('.product__pagination').style.visibility = 'visible';
                 document.querySelector('#resetProducts').style.display = 'none';
                 document.querySelector('#loadMoreProducts').style.display = 'block';
             });
@@ -128,7 +128,7 @@ const PLPController = {
                 currentPage = 1;
                 PLPController.filterProducts();
                 PLPController.displayProducts(currentPage);
-                PLPController.setupPagination();
+                // PLPController.setupPagination();
             });
         } catch (err) {
             console.log(err);
@@ -142,7 +142,7 @@ const PLPController = {
                 currentPage = 1;
                 PLPController.filterProducts();
                 PLPController.displayProducts(currentPage);
-                PLPController.setupPagination();
+                // PLPController.setupPagination();
             });
         } catch (err) {
             console.log(err);
@@ -164,7 +164,7 @@ const PLPController = {
                     currentPage = 1;
                     PLPController.filterProducts();
                     PLPController.displayProducts(currentPage);
-                    PLPController.setupPagination();
+                    // PLPController.setupPagination();
                 });
             }
         } catch (err) {
@@ -178,7 +178,7 @@ const PLPController = {
             products = await response.json();
             PLPController.filterProducts();
             PLPController.displayProducts(currentPage);
-            PLPController.setupPagination();
+            // PLPController.setupPagination();
         } catch (err) {
             console.log(err);
         }
@@ -250,7 +250,7 @@ const PLPController = {
             if (currentPage > 1) {
                 currentPage--;
                 PLPController.displayProducts(currentPage);
-                PLPController.setupPagination();
+                // PLPController.setupPagination();
             }
         });
         paginationList.appendChild(prevPageItem);
@@ -267,7 +267,7 @@ const PLPController = {
                 event.preventDefault();
                 currentPage = i;
                 PLPController.displayProducts(currentPage);
-                PLPController.setupPagination();
+                // PLPController.setupPagination();
             });
             paginationList.appendChild(pageItem);
         }
@@ -284,7 +284,7 @@ const PLPController = {
             if (currentPage < totalPages) {
                 currentPage++;
                 PLPController.displayProducts(currentPage);
-                PLPController.setupPagination();
+                // PLPController.setupPagination();
             }
         });
         paginationList.appendChild(nextPageItem);        
