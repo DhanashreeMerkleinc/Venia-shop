@@ -1,12 +1,10 @@
+import heartImg from './assets/images/heart.png';
+
 document.addEventListener('DOMContentLoaded', function () {
     const loader = document.querySelector('.loader');
-    
-    // Show the loader
     loader.classList.remove('loader--completed');
 
-    // Simulate a network request or some processing
     setTimeout(() => {
-        // Hide the loader after 3 seconds
         loader.classList.add('loader--completed');
     }, 3000);
 
@@ -222,7 +220,7 @@ const PLPController = {
                         <h3 class="product__product-title">${item.title.substring(0, 30)}</h3>
                         <p class="product__product-price">$${item.price}</p>
                         <button class="product__add-to-cart">
-                            <img src="assets/images/heart.png" alt="cart icon" class="product__cart-icon">
+                            <img src="${heartImg}" alt="cart icon" class="product__cart-icon">
                         </button>
                     </div>
                 </div>
