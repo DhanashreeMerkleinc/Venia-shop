@@ -1,0 +1,22 @@
+/*
+        @Project : Venia
+        @Desc :  Project
+        @type : E Commarce
+      */
+
+
+/* config include */
+
+@import "config/variables";
+@import "config/mixin";
+
+/* reset files */
+
+@import "base/normalize";
+@import "base/base-setup";
+@import "base/btn";
+@import "base/bs-sec";
+@import "components/footer";
+@import "components/header";
+
+/* component */
